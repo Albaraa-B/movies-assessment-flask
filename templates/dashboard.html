@@ -1,0 +1,18 @@
+<!doctype html>
+<title>Movies Assessment</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+
+<div class="page">
+  <h1>Movies</h1>
+  <div>
+      <p>latest: {{latest_movie['title']}}</p>
+  </div>
+  <div>
+    {% for movie in fav %}
+    <li>{{ movie['title'] }}, {{ movie['release_date']|safe }}</li>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em></li>
+  {% endfor %}
+  </div>
+</div>
